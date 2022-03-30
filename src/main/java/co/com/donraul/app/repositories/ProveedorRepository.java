@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface ProveedorRepository extends ReactiveMongoRepository<Proveedor, Long> {
+public interface ProveedorRepository extends ReactiveMongoRepository<Proveedor, String> {
     Mono<Proveedor> findByNumIdentificacion(String numIdentificacion);
     Flux<Proveedor> findByNombre(String nombre);
 }
