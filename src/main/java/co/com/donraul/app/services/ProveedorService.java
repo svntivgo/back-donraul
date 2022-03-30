@@ -24,9 +24,10 @@ public class ProveedorService {
         });
     }
 
-    public String eliminarProveedor (String id) {
-        proveedorRepository.deleteById(id);
-        return "Se eliminó con éxito el proveedor con id: "+id;
+    public Mono<Proveedor> eliminarProveedor (String id) {
+        return proveedorRepository.findById(id).flatMap(proveedor ->
+                proveedorRepository.deleteById(proveedor.getId()).thenReturn(proveedor)
+                );
     }
 
     public Mono<Proveedor> buscarProveedorPorNumIdentificacion (String numIdentificacion) {

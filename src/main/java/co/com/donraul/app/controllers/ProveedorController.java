@@ -25,7 +25,7 @@ public class ProveedorController {
     }
 
     @DeleteMapping("/proveedor/")
-    private String eliminar(@RequestParam("id") String id) {
+    private Mono<Proveedor> eliminar(@RequestParam("id") String id) {
         return proveedorService.eliminarProveedor(id);
     }
 
