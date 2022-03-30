@@ -10,14 +10,15 @@ public class Cliente {
     private String id;
     private String nombre;
     private String celular;
+    private String numIdentificacion;
 
     public Cliente() {
     }
 
-    public Cliente(String id, String nombre, String celular) {
-        this.id = id;
+    public Cliente(String nombre, String celular, String numIdentificacion) {
         this.nombre = nombre;
         this.celular = celular;
+        this.numIdentificacion = numIdentificacion;
     }
 
     public String getId() {
@@ -44,24 +45,12 @@ public class Cliente {
         this.celular = celular;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Cliente cliente = (Cliente) o;
-
-        if (!id.equals(cliente.id)) return false;
-        if (nombre != null ? !nombre.equals(cliente.nombre) : cliente.nombre != null) return false;
-        return celular != null ? celular.equals(cliente.celular) : cliente.celular == null;
+    public String getNumIdentificacion() {
+        return numIdentificacion;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
-        result = 31 * result + (celular != null ? celular.hashCode() : 0);
-        return result;
+    public void setNumIdentificacion(String numIdentificacion) {
+        this.numIdentificacion = numIdentificacion;
     }
 
     @Override
@@ -70,7 +59,7 @@ public class Cliente {
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", celular='" + celular + '\'' +
+                ", numIdentificacion='" + numIdentificacion + '\'' +
                 '}';
     }
-
 }
