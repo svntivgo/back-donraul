@@ -7,13 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Proveedor {
 
     @Id
-    private String id;
+    private Long id;
     private String nombre;
     private String celular;
     private String numIdentificacion;
-
-    public Proveedor() {
-    }
 
     public Proveedor(String nombre, String celular, String numIdentificacion) {
         this.nombre = nombre;
@@ -21,11 +18,11 @@ public class Proveedor {
         this.numIdentificacion = numIdentificacion;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
