@@ -1,6 +1,5 @@
 package co.com.donraul.app.controllers;
 
-import co.com.donraul.app.models.Proveedor;
 import co.com.donraul.app.models.Vendedor;
 import co.com.donraul.app.services.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
