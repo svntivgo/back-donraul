@@ -30,6 +30,10 @@ public class VendedorService {
         );
     }
 
+    public Flux<Vendedor> buscarVendedores () {
+        return vendedorRepository.findAll();
+    }
+
     public Mono<Vendedor> buscarVendedorPorNumIdentificacion (String numIdentificacion) {
         return vendedorRepository.findByNumIdentificacion(numIdentificacion);
     }

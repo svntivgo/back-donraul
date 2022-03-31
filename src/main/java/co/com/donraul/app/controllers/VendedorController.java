@@ -29,6 +29,11 @@ public class VendedorController {
         return vendedorService.eliminarVendedor(id);
     }
 
+    @GetMapping("/vendedores")
+    private Flux<Vendedor> buscarTodo() {
+        return vendedorService.buscarVendedores();
+    }
+
     @GetMapping("/vendedor/")
     private Mono<Vendedor> buscar(@RequestParam("numIdentificacion") String numIdentificacion) {
         return vendedorService.buscarVendedorPorNumIdentificacion(numIdentificacion);
