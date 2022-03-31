@@ -35,6 +35,17 @@ public class ProductoController {
     }
 
     @GetMapping("/producto/")
+    private Mono<Producto> buscarTodo(@RequestParam("id") String id) {
+        return productoService.buscarProductosPorId(id);
+    }
+
+
+    @GetMapping("/productos/nombre/")
+    private Flux<Producto> buscarPorNombre(@RequestParam("nombre") String nombre) {
+        return productoService.buscarProductosPorNombre(nombre);
+    }
+
+    @GetMapping("/producto/estado/")
     private Flux<Producto> buscarPorEstado(@RequestParam("estado") String estado) {
         return productoService.buscarProductoPorEstado(estado);
     }

@@ -31,8 +31,16 @@ public class ProductoService {
         );
     }
 
+    public Mono<Producto> buscarProductosPorId (String id) {
+        return productoRepository.findById(id);
+    }
+
     public Flux<Producto> buscarProductos () {
         return productoRepository.findAll();
+    }
+
+    public Flux<Producto> buscarProductosPorNombre (String name) {
+        return productoRepository.findByName(name);
     }
 
     public Flux<Producto> buscarProductoPorEstado (String estado) {
