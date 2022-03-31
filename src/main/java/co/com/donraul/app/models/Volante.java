@@ -10,7 +10,7 @@ import java.util.List;
 public class Volante {
 
     @Id
-    private Long id;
+    private String id;
     private LocalDate fecha;
     private Proveedor proveedor;
     private List<Producto> productos;
@@ -21,11 +21,11 @@ public class Volante {
         this.productos = productos;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -16,7 +16,11 @@ public class Producto {
     private String estado;
     private enum medida {BAJO, NORMAL, ALTO};
 
-    public Producto(String nombre, Integer precio, Integer cantidad, Integer cantidadMinima, Integer cantidadMaxima, String estado) {
+    public Producto() {
+    }
+
+    public Producto(String id, String nombre, Integer precio, Integer cantidad, Integer cantidadMinima, Integer cantidadMaxima, String estado) {
+        this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;

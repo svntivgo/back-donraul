@@ -18,10 +18,19 @@ public class ProductoService {
     }
 
     public Mono<Producto> actualizarProducto (String id, Producto producto) {
+        Producto productoActualizado = new Producto();
+
         return productoRepository.findById(id).flatMap(product -> {
-            producto.setId(id);
-            producto.setEstado();
-            return agregarProducto(producto);
+            Integer cantidadASumar = producto.getCantidad();
+            Integer cantidadTotal = product.getCantidad()+cantidadASumar;
+            productoActualizado.setId(producto.getId());
+            productoActualizado.setNombre(producto.getNombre());
+            productoActualizado.setPrecio(producto.getPrecio());
+            productoActualizado.setCantidad(product.getCantidad()+producto.getCantidad());
+            productoActualizado.setCantidadMaxima(producto.getCantidadMaxima());
+            productoActualizado.setCantidadMinima(producto.getCantidadMinima());
+            productoActualizado.setEstado();
+            return agregarProducto(productoActualizado);
         });
     }
 
