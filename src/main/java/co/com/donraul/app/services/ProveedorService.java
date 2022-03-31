@@ -30,6 +30,10 @@ public class ProveedorService {
                 );
     }
 
+    public Flux<Proveedor> buscarProveedores () {
+        return proveedorRepository.findAll();
+    }
+
     public Mono<Proveedor> buscarProveedorPorNumIdentificacion (String numIdentificacion) {
         return proveedorRepository.findByNumIdentificacion(numIdentificacion);
     }

@@ -29,6 +29,11 @@ public class ProveedorController {
         return proveedorService.eliminarProveedor(id);
     }
 
+    @GetMapping("/proveedores/")
+    private Flux<Proveedor> buscarTodo() {
+        return proveedorService.buscarProveedores();
+    }
+
     @GetMapping("/proveedor/")
     private Mono<Proveedor> buscar(@RequestParam("numIdentificacion") String numIdentificacion) {
         return proveedorService.buscarProveedorPorNumIdentificacion(numIdentificacion);
