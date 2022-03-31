@@ -10,7 +10,7 @@ import java.util.List;
 public class Factura {
 
     @Id
-    private Long id;
+    private String id;
     private LocalDate fecha;
     private Cliente cliente;
     private Vendedor vendedor;
@@ -22,13 +22,14 @@ public class Factura {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.productos = productos;
+        this.total = setTotal();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -68,8 +69,12 @@ public class Factura {
         return total;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public Integer setTotal() {
+        Integer subtotal = 0;
+        for (int i = 0; i < this.productos.size(); i++) {
+            subtotal = subtotal + (productos.get(i).getPrecio() * productos.get(i).getCantidad());
+        }
+        return this.total = subtotal;
     }
 
     @Override
