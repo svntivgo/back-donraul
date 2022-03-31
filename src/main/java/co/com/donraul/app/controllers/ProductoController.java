@@ -29,6 +29,11 @@ public class ProductoController {
         return productoService.eliminarProducto(id);
     }
 
+    @GetMapping("/productos")
+    private Flux<Producto> buscarTodo() {
+        return productoService.buscarProductos();
+    }
+
     @GetMapping("/producto/")
     private Flux<Producto> buscarPorEstado(@RequestParam("estado") String estado) {
         return productoService.buscarProductoPorEstado(estado);
