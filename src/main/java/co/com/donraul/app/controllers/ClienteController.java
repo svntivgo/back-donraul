@@ -29,6 +29,11 @@ public class ClienteController {
         return clienteService.eliminarCliente(id);
     }
 
+    @GetMapping("/clientes")
+    private Flux<Cliente> buscarTodo() {
+        return clienteService.buscarClientes();
+    }
+
     @GetMapping("/cliente/")
     private Mono<Cliente> buscar(@RequestParam("numIdentificacion") String numIdentificacion) {
         return clienteService.buscarClientePorNumIdentificacion(numIdentificacion);

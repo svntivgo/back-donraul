@@ -30,6 +30,10 @@ public class ClienteService {
                 );
     }
 
+    public Flux<Cliente> buscarClientes () {
+        return clienteRepository.findAll();
+    }
+
     public Mono<Cliente> buscarClientePorNumIdentificacion (String numIdentificacion) {
         return clienteRepository.findByNumIdentificacion(numIdentificacion);
     }
