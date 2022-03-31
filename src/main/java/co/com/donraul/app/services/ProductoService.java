@@ -21,8 +21,6 @@ public class ProductoService {
         Producto productoActualizado = new Producto();
 
         return productoRepository.findById(id).flatMap(product -> {
-            Integer cantidadASumar = producto.getCantidad();
-            Integer cantidadTotal = product.getCantidad()+cantidadASumar;
             productoActualizado.setId(producto.getId());
             productoActualizado.setNombre(producto.getNombre());
             productoActualizado.setPrecio(producto.getPrecio());
@@ -30,6 +28,7 @@ public class ProductoService {
             productoActualizado.setCantidadMaxima(producto.getCantidadMaxima());
             productoActualizado.setCantidadMinima(producto.getCantidadMinima());
             productoActualizado.setEstado();
+
             return agregarProducto(productoActualizado);
         });
     }
