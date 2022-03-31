@@ -8,6 +8,7 @@ import co.com.donraul.app.repositories.ProveedorRepository;
 import co.com.donraul.app.repositories.VolanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
@@ -35,9 +36,13 @@ public class VolanteService {
 
         return volanteRepository.save(volante);
 
+    }
 
+    public Mono<Volante> buscarVolantePorId (String id) {
+        return volanteRepository.findById(id);
+    }
 
-
-
+    public Flux<Volante> buscarVolantes () {
+        return volanteRepository.findAll();
     }
 }
