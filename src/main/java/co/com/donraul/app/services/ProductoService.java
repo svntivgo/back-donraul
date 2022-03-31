@@ -39,8 +39,8 @@ public class ProductoService {
         return productoRepository.findAll();
     }
 
-    public Flux<Producto> buscarProductosPorNombre (String name) {
-        return productoRepository.findByName(name);
+    public Flux<Producto> buscarProductosPorNombre (String nombre) {
+        return productoRepository.findByNombre(nombre);
     }
 
     public Flux<Producto> buscarProductoPorEstado (String estado) {

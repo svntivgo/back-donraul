@@ -29,7 +29,7 @@ public class ProveedorController {
         return proveedorService.eliminarProveedor(id);
     }
 
-    @GetMapping("/proveedores/")
+    @GetMapping("/proveedores")
     private Flux<Proveedor> buscarTodo() {
         return proveedorService.buscarProveedores();
     }

@@ -40,7 +40,7 @@ public class ProductoController {
     }
 
 
-    @GetMapping("/productos/nombre/")
+    @GetMapping("/producto/nombre/")
     private Flux<Producto> buscarPorNombre(@RequestParam("nombre") String nombre) {
         return productoService.buscarProductosPorNombre(nombre);
     }
