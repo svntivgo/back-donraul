@@ -27,9 +27,9 @@ public class FacturaService {
     @Autowired
     ProductoService productoService;
 
-    public Mono<Factura> agregarFactura (String idCliente, String idVendedor, List<Producto> productos) {
-        Cliente cliente = clienteRepository.findById(idCliente).block();
-        Vendedor vendedor = vendedorRepository.findById(idVendedor).block();
+    public Mono<Factura> agregarFactura (String cedulaCliente, String cedulaVendedor, List<Producto> productos) {
+        Cliente cliente = clienteRepository.findByNumIdentificacion(cedulaCliente).block();
+        Vendedor vendedor = vendedorRepository.findByNumIdentificacion(cedulaVendedor).block();
         List<Producto> sinModificar = productos;
         Factura factura = new Factura(LocalDate.now(),cliente,vendedor,productos);
 

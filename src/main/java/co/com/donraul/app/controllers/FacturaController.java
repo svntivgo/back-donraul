@@ -19,8 +19,8 @@ public class FacturaController {
     FacturaService facturaService;
 
     @PostMapping("/factura/")
-    public Mono<Factura> agregar(@RequestParam String idCliente, @RequestParam String idVendedor, @RequestBody List<Producto> productos) {
-        return facturaService.agregarFactura(idCliente,idVendedor,productos);
+    public Mono<Factura> agregar(@RequestParam String cedulaCliente, @RequestParam String cedulaVendedor, @RequestBody List<Producto> productos) {
+        return facturaService.agregarFactura(cedulaCliente,cedulaVendedor,productos);
     }
 
     @GetMapping("/factura/")

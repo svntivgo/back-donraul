@@ -19,8 +19,8 @@ public class VolanteController {
     VolanteService volanteService;
 
     @PostMapping("/volante/")
-    private Mono<Volante> agregar (@RequestParam("numIdentification") String numIdentification, @RequestBody List<Producto> productos) {
-        return volanteService.agregarVolante(numIdentification,productos);
+    private Mono<Volante> agregar (@RequestParam("numIdentificacion") String numIdentificacion, @RequestBody List<Producto> productos) {
+        return volanteService.agregarVolante(numIdentificacion,productos);
     }
 
     @GetMapping("/volante/")
