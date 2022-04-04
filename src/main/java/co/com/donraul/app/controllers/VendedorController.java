@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://don-raul.web.app")
+@CrossOrigin(origins = "*")
 public class VendedorController {
 
     @Autowired

@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://don-raul.web.app")
+@CrossOrigin(origins = "*")
 public class FacturaController {
 
     @Autowired
